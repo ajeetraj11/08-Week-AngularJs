@@ -2,11 +2,20 @@
   h2 {
     color: blue;
     display: flex;
-    justify-self: center;
-    align-self: center;
+    justify-content: center;
+    align-items: start;
     font-size: large;
-    height: 100vh;
+    height: 50px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 25%;
+    background-color: lightblue;
   }
 </style>
+<h2>{{title}}</h2>
 
-<h2>{{message}}</h2>
+<!-- Dynamic Image using Property Binding -->
+<img [src]="ImageURL" alt="Dynamic BridgeLabz Logo">
