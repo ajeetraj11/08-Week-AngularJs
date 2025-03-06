@@ -1,21 +1,32 @@
 <style>
+  /* Centering the container */
+  .container {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  /* Styling the heading */
   h2 {
     color: blue;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    font-size: large;
-    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
   }
 
+  /* Styling the image */
   img {
-    display: block;
-    margin: 0 auto;
-    width: 25%;
-    background-color: lightblue;
+    width: 200px;
+    /* Fixed size */
+    height: auto;
+    margin-top: 20px;
+    cursor: pointer;
+    /* Makes it clear it's clickable */
+    border: 2px solid lightblue;
+    border-radius: 10px;
   }
 </style>
-<h2>{{title}}</h2>
 
-<!-- Dynamic Image using Property Binding -->
-<img [src]="ImageURL" alt="Dynamic BridgeLabz Logo">
+<div class="container">
+  <h2>{{title}}</h2>
+  <!-- Image Click Event -->
+  <img [src]="ImageURL" (click)="onClick($event)" alt="Dynamic BridgeLabz Logo">
+</div>
