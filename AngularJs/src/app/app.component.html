@@ -22,15 +22,29 @@ img {
     border-radius: 10px;
 }
 
-</style>  
+input {
+    padding: 10px;
+    width: 20%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-top: 10px;
+}
 
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+
+</style>
 <div class="container">
-  <h2>{{title}}</h2>  
-  <!-- Image Click Event -->
-  <img [src]="ImageURL" (click)="onClick($event)" alt="Dynamic BridgeLabz Logo"> 
+  <h2>{{title}}</h2>
+  <img [src]="ImageURL" (click)="onClick()" alt="Dynamic BridgeLabz Logo">
 </div>
 
 <div class="container">
-  <h2>{{title}} {{this.userName}}</h2> 
-  <input type="text" [(ngModel)]="userName" placeholder="Enter your name">
+  <h2>Hello, {{ userName }} from BridgeLabz</h2>
+  <input type="text" (input)="onInput($event)" [(ngModel)]="userName" placeholder="Enter your name">
+  <span class= error> {{this.errorMessage}} </span>
 </div>
